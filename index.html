@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Guest List Manager</title>
+<title>Budget Tracker - Wedding Planner</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -24,16 +26,12 @@
             },
         }
     </script>
-<style type="text/tailwindcss">
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+<style>
         body {
-            min-height: max(884px, 100dvh);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 <style>
@@ -42,184 +40,219 @@
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display antialiased">
-<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl">
-<div class="sticky top-0 z-20 flex flex-col bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
-<div class="flex items-center p-4 justify-between">
-<div class="text-[#181113] dark:text-white flex size-12 shrink-0 items-center">
-<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
 </div>
-<h2 class="text-[#181113] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Guest List</h2>
-<div class="flex w-12 items-center justify-end">
-<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent text-[#181113] dark:text-white">
-<span class="material-symbols-outlined">more_vert</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Budget Tracker</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">more_horiz</span>
 </button>
 </div>
 </div>
-<div class="px-4 pb-4">
-<div class="flex p-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-xl">
-<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white dark:bg-gray-700 text-primary shadow-sm">All Sides</button>
-<button class="flex-1 py-2 text-sm font-medium rounded-lg text-[#89616b] dark:text-gray-400">Bride's</button>
-<button class="flex-1 py-2 text-sm font-medium rounded-lg text-[#89616b] dark:text-gray-400">Groom's</button>
+</header>
+<main class="max-w-md mx-auto pb-24">
+<!-- Budget Summary Card -->
+<div class="p-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Total Budget</p>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">$35,000</h1>
 </div>
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">
+                        ESTIMATED
+                    </div>
 </div>
-<div class="flex flex-nowrap gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
-<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
-<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Total Invited</p>
-<p class="text-primary tracking-light text-xl font-bold leading-tight">150</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1 border-r border-slate-100 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Total Spent</p>
+<p class="text-primary text-xl font-bold">$22,450</p>
+<p class="text-emerald-500 text-xs font-medium flex items-center">
+<span class="material-symbols-outlined text-xs mr-1">trending_up</span>
+                            64% of total
+                        </p>
 </div>
-<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
-<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Confirmed</p>
-<p class="text-green-600 tracking-light text-xl font-bold leading-tight">82</p>
-</div>
-<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
-<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Pending</p>
-<p class="text-gray-500 tracking-light text-xl font-bold leading-tight">68</p>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-background-dark">
-<div class="px-4 py-3">
-<label class="flex flex-col min-w-40 h-12 w-full">
-<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
-<div class="text-[#89616b] flex border-none bg-[#f4f0f1] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#181113] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f4f0f1] dark:bg-gray-800 h-full placeholder:text-[#89616b] px-3 text-base font-normal" placeholder="Search guests..." value=""/>
-</div>
-</label>
-</div>
-<div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
-<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-white shadow-sm">
-<p class="text-sm font-semibold">All Guests</p>
-</div>
-<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f4f0f1] dark:bg-gray-800 px-5 border border-gray-100 dark:border-gray-700">
-<p class="text-[#181113] dark:text-gray-300 text-sm font-medium">Confirmed</p>
-</div>
-<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f4f0f1] dark:bg-gray-800 px-5 border border-gray-100 dark:border-gray-700">
-<p class="text-[#181113] dark:text-gray-300 text-sm font-medium">Pending</p>
+<div class="flex flex-col gap-1 pl-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Remaining</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold">$12,550</p>
+<p class="text-slate-400 text-xs font-medium italic">
+                            Within limits
+                        </p>
 </div>
 </div>
 </div>
-<div class="flex-1 overflow-y-auto px-2 pb-24">
-<div class="px-3 py-2 flex items-center justify-between">
-<p class="text-[#89616b] text-xs font-bold uppercase tracking-widest">Showing All Guests</p>
-<p class="text-[#89616b] text-[10px] font-medium">Sort: Recent</p>
 </div>
-<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<!-- Section Header -->
+<div class="px-4 flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Spending by Category</h3>
+<button class="text-primary text-sm font-semibold">View Insights</button>
+</div>
+<!-- Category Progress Bars -->
+<div class="flex flex-col gap-2 p-4">
+<!-- Category 1: Venue & Rentals -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB80YuFmvZ4NDOPK143RYYvLjBN4fVa48P2i8i4b4xRIfuSeFx_AqF-1CFUPQAJe3Xspm1xbjGrQ-7V4otHDJlTB9sLczOyR7MhIJImfAhYQkP5hPJg4Zc71HcH5TAJqqAxokOov-wHxcSvE2huiWGiC57Uma1uCykDh11lvU3XGARlXJ3iYmtHdnVmjrdz4a145hKOSUz36fw1RAKQGfC3SPDocmc-zXgt86vDwIzyPGKvPj5IQcNaeCiduO0gLsO8akTNgW0QXmGC");'></div>
-<div class="flex flex-col justify-center">
-<div class="flex items-center gap-2">
-<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Sarah &amp; Mike Johnson</p>
-<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">home_work</span>
 </div>
-<div class="flex items-center gap-2 mt-1">
-<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
-<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 2 • Vegan</p>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">Venue &amp; Rentals</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">$12,750 of $15,000</p>
 </div>
 </div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
 </div>
-<div class="flex flex-col items-end gap-1">
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Confirmed</span>
+<div class="flex flex-col gap-1.5">
+<div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 85%;"></div>
+</div>
+<div class="flex justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">85% utilized</p>
+<p class="text-slate-900 dark:text-white text-xs font-bold">$2,250 left</p>
 </div>
 </div>
-<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+</div>
+</div>
+<!-- Category 2: Catering & Drinks -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCebxLtVmLY9BvE1mybJiDoML-K54ZEe9keFSmw_0oMzRSN0LJ8cJleg73ntQ4yxLs9ll9blA53VA6W8OGtYb-huFkMgYqLEypqwtLCcba09kTOrdOURKBioZcqNE-ku454gbQyiel-k8uGYtJWhfzaR4-GA6sVcPGpClaHrRbMJlLTDGUK8c6Fc5K58qBux6F9vnYtgSuruCjDeWMjrvraSfIZF5DYak_QoUV45bWIkfisTP7VMcrzBDSjp6aVHQ1PEofkcGCpwh3A");'></div>
-<div class="flex flex-col justify-center">
-<div class="flex items-center gap-2">
-<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">David Wilson</p>
-<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-500 border border-blue-100 uppercase">Groom</span>
+<div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+<span class="material-symbols-outlined">restaurant</span>
 </div>
-<div class="flex items-center gap-2 mt-1">
-<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
-<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 1 • Pending Info</p>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">Catering &amp; Drinks</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">$3,200 of $8,000</p>
 </div>
 </div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
 </div>
-<div class="flex flex-col items-end gap-1">
-<span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider">Pending</span>
+<div class="flex flex-col gap-1.5">
+<div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full rounded-full bg-orange-500" style="width: 40%;"></div>
 </div>
-</div>
-<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
-<div class="flex items-center gap-3 opacity-60">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-gray-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6e6-Gmc0gobVfk5kNdMNbrwv7nDdeuO1LiuP8Zm3Xnh6l-Nw_5tTAOSjSfcVWYd8R4Zw3KZzLVCovXTlCgDuOvEzE6--a7UI73BWDsaUiEl0x86jfR5sB_-NwWpk4bqINkEGrYowGKSCZeE3vjesryNecGrDKSopJ992frmKsiGKDVzfr6Uf3VDMcyDwbKE9G23FRSfjBid3Knk5k1zx6fyRu3G91aPCncx0SMpxWT3mvvX2utOrDZ-BoUiy-a1OTQSmEIamYVdyk");'></div>
-<div class="flex flex-col justify-center">
-<div class="flex items-center gap-2">
-<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Elena Rodriguez</p>
-<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
-</div>
-<div class="flex items-center gap-2 mt-1">
-<span class="material-symbols-outlined text-sm text-[#89616b]">close</span>
-<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Cannot Attend</p>
+<div class="flex justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">40% utilized</p>
+<p class="text-slate-900 dark:text-white text-xs font-bold">$4,800 left</p>
 </div>
 </div>
 </div>
-<div class="flex flex-col items-end gap-1">
-<span class="px-2 py-1 rounded-full bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-wider">Declined</span>
 </div>
-</div>
-<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<!-- Category 3: Photography (Expanded State Example) -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/30 dark:border-primary/50 shadow-md ring-1 ring-primary/10 overflow-hidden">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzie1m7xVQWmZKZmqd8W0P27Gs_AuS94j1QdMt7wG7JhlptwyDbo18iMkR3YIGEeMZgUVpEB8i7GyYJSJjTQhMjJ6nnY3mG1eVOKsdFhtlSMPcv2zLyO9av2ykiIQcTbimc5b10z5yysHHvhVndxjFWdwlKz2WcwXrqxPEJSUj3jZGVWuKk5rpnWba8_cpOc8Z0m7dFeXkDNWADTC0HufA5EstKCc7GBEBfVzmF-7hHRPA9htI1mgix0Rv2FbjWvLjewSo2XCUpUz1");'></div>
-<div class="flex flex-col justify-center">
-<div class="flex items-center gap-2">
-<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">The Thompson Family</p>
-<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-500 border border-blue-100 uppercase">Groom</span>
+<div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+<span class="material-symbols-outlined">photo_camera</span>
 </div>
-<div class="flex items-center gap-2 mt-1">
-<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
-<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 4 • Mixed</p>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">Photography</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">$4,500 of $4,500</p>
 </div>
 </div>
+<span class="material-symbols-outlined text-primary">expand_less</span>
 </div>
-<div class="flex flex-col items-end gap-1">
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Confirmed</span>
+<div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full rounded-full bg-emerald-500" style="width: 100%;"></div>
 </div>
 </div>
-<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<!-- Expanded Items -->
+<div class="bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 px-4 py-3">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Main Photographer Deposit</span>
+<span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Oct 12, 2023 • Paid</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$1,500</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Wedding Day Balance</span>
+<span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Due Mar 15, 2024</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$2,500</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Engagement Session</span>
+<span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Nov 05, 2023 • Paid</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$500</span>
+</div>
+</div>
+<button class="mt-4 w-full py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">add</span>
+                        Add Expense
+                    </button>
+</div>
+</div>
+<!-- Category 4: Decor & Flowers -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqBURV2o-AwlgTId5tRMwRZNXhGLMurX57Mg8lNy_44y-Qe90rZBMIs0qpkvq28CxiKq3Y9gZSp65g9umlaIvBEHvRCQCK6umGttJIcmRqmW4pNOI9sNboOlAWMHOe8BrmbVwdkqNbBRtxGlOR9umaAWK2wdXKbkW9N1TlLxeEPMWU5EtyRfQ_gBCwoTf1KG9nALYN7PIuhVcUl_HHzWUIb4C6nw2YiFqJEmeRgBDyg_DVBA5WPCIZQGnLwOO_Dm1dCZLY5yLen_Ci");'></div>
-<div class="flex flex-col justify-center">
-<div class="flex items-center gap-2">
-<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Robert Chen</p>
-<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
+<div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center">
+<span class="material-symbols-outlined">local_florist</span>
 </div>
-<div class="flex items-center gap-2 mt-1">
-<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
-<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 1 • Standard</p>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">Decor &amp; Flowers</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">$2,000 of $5,000</p>
 </div>
 </div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
 </div>
-<div class="flex flex-col items-end gap-1">
-<span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider">Pending</span>
+<div class="flex flex-col gap-1.5">
+<div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full rounded-full bg-pink-500" style="width: 40%;"></div>
+</div>
+<div class="flex justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">40% utilized</p>
+<p class="text-slate-900 dark:text-white text-xs font-bold">$3,000 left</p>
 </div>
 </div>
 </div>
-<div class="fixed bottom-6 right-6 z-30">
-<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg active:scale-95 transition-transform">
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6">
+<button class="bg-primary text-white w-14 h-14 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
 <span class="material-symbols-outlined text-3xl">add</span>
 </button>
 </div>
-<div class="sticky bottom-0 z-20 w-full bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 flex justify-around py-3">
-<div class="flex flex-col items-center gap-1 text-gray-400">
-<span class="material-symbols-outlined">home</span>
-<span class="text-[10px] font-medium">Home</span>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-8 pt-2">
+<div class="max-w-md mx-auto flex justify-around items-center">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Timeline</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Guests</span>
 </div>
 <div class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined">group</span>
-<span class="text-[10px] font-medium">Guests</span>
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Budget</span>
 </div>
-<div class="flex flex-col items-center gap-1 text-gray-400">
-<span class="material-symbols-outlined">calendar_today</span>
-<span class="text-[10px] font-medium">Tasks</span>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">checklist</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Tasks</span>
 </div>
-<div class="flex flex-col items-center gap-1 text-gray-400">
-<span class="material-symbols-outlined">payments</span>
-<span class="text-[10px] font-medium">Budget</span>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Settings</span>
 </div>
 </div>
-</div>
-
+</nav>
 </body></html>
