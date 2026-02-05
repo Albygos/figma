@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wedding Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white transition-colors duration-300">
+<div class="max-w-md mx-auto min-h-screen flex flex-col shadow-2xl relative bg-background-light dark:bg-background-dark overflow-x-hidden pb-24">
+<!-- Header Hero with Background & Timer -->
+<div class="relative w-full h-80 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="romantic outdoor wedding setup with flowers" style='background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlrerKm_s6tm-xMUSPPP5Am5Ncj5WU8XbjI8lAWVLdDAiFp2-iv8UEJtfy5yTifh3leF51YnsQ7R0t0gC_E11viug1aWGXymNjayzX_A1KwSuRm2v_h8YpUnI-ZOx2iltNsuSY_ShGeKcV-V1hiQIjhLZ1Rk_qNxgKBwsOf37KaBfnxH2z1OB58rsEkFGRFUgexVic-olqAvK827o4mhZFgak6_CP2W_V-46SVzuZ1fXXSmtIeyhz9t3OYcOeaVlM8wce2tm36rI5Z");'></div>
+<div class="relative h-full flex flex-col justify-between p-6">
+<div class="flex justify-between items-center">
+<h1 class="text-white text-2xl font-bold tracking-tight">Our Big Day</h1>
+<button class="text-white bg-white/20 p-2 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="glass-effect rounded-xl p-4 mb-2">
+<p class="text-white/80 text-xs uppercase tracking-widest font-semibold mb-3 text-center">Countdown to Forever</p>
+<div class="flex gap-3">
+<div class="flex grow basis-0 flex-col items-center">
+<p class="text-white text-2xl font-bold">124</p>
+<p class="text-white/70 text-[10px] uppercase font-medium">Days</p>
+</div>
+<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
+<p class="text-white text-2xl font-bold">08</p>
+<p class="text-white/70 text-[10px] uppercase font-medium">Hours</p>
+</div>
+<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
+<p class="text-white text-2xl font-bold">30</p>
+<p class="text-white/70 text-[10px] uppercase font-medium">Mins</p>
+</div>
+<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
+<p class="text-white text-2xl font-bold">15</p>
+<p class="text-white/70 text-[10px] uppercase font-medium">Secs</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Budget Progress Section -->
+<div class="px-4 -mt-6 relative z-10">
+<div class="bg-white dark:bg-background-dark/50 rounded-xl p-6 shadow-lg border border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-[#181113] dark:text-white text-lg font-bold">Budget Progress</h3>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">On Track</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Circular Progress Simulation -->
+<div class="relative flex items-center justify-center w-24 h-24">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-gray-100 dark:text-gray-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xl font-bold">50%</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-[#89616b] dark:text-gray-400 text-sm font-medium">Spent vs. Remaining</p>
+<p class="text-xl font-bold text-[#181113] dark:text-white">$12,400 / $25k</p>
+<div class="mt-2 h-1.5 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="px-4 pt-8">
+<h3 class="text-[#181113] dark:text-white text-lg font-bold mb-4">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center gap-3 p-4 bg-primary/10 dark:bg-primary/20 rounded-xl border border-primary/20 transition-all hover:scale-[1.02]">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">person_add</span>
+</div>
+<div class="text-left">
+<p class="text-sm font-bold">Add Guest</p>
+<p class="text-[10px] text-gray-500 uppercase font-semibold">Invite List</p>
+</div>
+</button>
+<button class="flex items-center gap-3 p-4 bg-primary/10 dark:bg-primary/20 rounded-xl border border-primary/20 transition-all hover:scale-[1.02]">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">task</span>
+</div>
+<div class="text-left">
+<p class="text-sm font-bold">New Task</p>
+<p class="text-[10px] text-gray-500 uppercase font-semibold">To-do list</p>
+</div>
+</button>
+</div>
+</div>
+<!-- Upcoming Tasks -->
+<div class="px-4 pt-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-[#181113] dark:text-white text-lg font-bold">Upcoming Tasks</h3>
+<button class="text-primary text-sm font-semibold">See All</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
+<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
+<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Finalize Catering Menu</p>
+<p class="text-xs text-gray-500">Due in 2 days</p>
+</div>
+<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
+<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
+<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Bridal Dress Fitting</p>
+<p class="text-xs text-gray-500">Due in 5 days</p>
+</div>
+<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
+<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
+<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Order Floral Decorations</p>
+<p class="text-xs text-gray-500">Due in 1 week</p>
+</div>
+<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation (Fixed) -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-gray-100 dark:border-white/10 flex items-center justify-around py-4 px-6 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-variation-fill">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Guests</span>
+</button>
+<div class="relative -top-8">
+<button class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Budget</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</div>
+</div>
+</body></html>
