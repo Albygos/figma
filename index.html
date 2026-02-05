@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Wedding Dashboard</title>
+<title>Guest List Manager</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -19,27 +17,23 @@
                         "background-dark": "#221015",
                     },
                     fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                        "display": ["Plus Jakarta Sans"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
-<style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+<style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
         }
     </style>
 <style>
@@ -48,155 +42,184 @@
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white transition-colors duration-300">
-<div class="max-w-md mx-auto min-h-screen flex flex-col shadow-2xl relative bg-background-light dark:bg-background-dark overflow-x-hidden pb-24">
-<!-- Header Hero with Background & Timer -->
-<div class="relative w-full h-80 overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="romantic outdoor wedding setup with flowers" style='background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlrerKm_s6tm-xMUSPPP5Am5Ncj5WU8XbjI8lAWVLdDAiFp2-iv8UEJtfy5yTifh3leF51YnsQ7R0t0gC_E11viug1aWGXymNjayzX_A1KwSuRm2v_h8YpUnI-ZOx2iltNsuSY_ShGeKcV-V1hiQIjhLZ1Rk_qNxgKBwsOf37KaBfnxH2z1OB58rsEkFGRFUgexVic-olqAvK827o4mhZFgak6_CP2W_V-46SVzuZ1fXXSmtIeyhz9t3OYcOeaVlM8wce2tm36rI5Z");'></div>
-<div class="relative h-full flex flex-col justify-between p-6">
-<div class="flex justify-between items-center">
-<h1 class="text-white text-2xl font-bold tracking-tight">Our Big Day</h1>
-<button class="text-white bg-white/20 p-2 rounded-full backdrop-blur-sm">
-<span class="material-symbols-outlined">notifications</span>
-</button>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl">
+<div class="sticky top-0 z-20 flex flex-col bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between">
+<div class="text-[#181113] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
 </div>
-<div class="glass-effect rounded-xl p-4 mb-2">
-<p class="text-white/80 text-xs uppercase tracking-widest font-semibold mb-3 text-center">Countdown to Forever</p>
-<div class="flex gap-3">
-<div class="flex grow basis-0 flex-col items-center">
-<p class="text-white text-2xl font-bold">124</p>
-<p class="text-white/70 text-[10px] uppercase font-medium">Days</p>
-</div>
-<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
-<p class="text-white text-2xl font-bold">08</p>
-<p class="text-white/70 text-[10px] uppercase font-medium">Hours</p>
-</div>
-<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
-<p class="text-white text-2xl font-bold">30</p>
-<p class="text-white/70 text-[10px] uppercase font-medium">Mins</p>
-</div>
-<div class="flex grow basis-0 flex-col items-center border-l border-white/20">
-<p class="text-white text-2xl font-bold">15</p>
-<p class="text-white/70 text-[10px] uppercase font-medium">Secs</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Budget Progress Section -->
-<div class="px-4 -mt-6 relative z-10">
-<div class="bg-white dark:bg-background-dark/50 rounded-xl p-6 shadow-lg border border-primary/10">
-<div class="flex items-center justify-between mb-4">
-<h3 class="text-[#181113] dark:text-white text-lg font-bold">Budget Progress</h3>
-<span class="text-primary text-xs font-bold uppercase tracking-wider">On Track</span>
-</div>
-<div class="flex items-center gap-6">
-<!-- Circular Progress Simulation -->
-<div class="relative flex items-center justify-center w-24 h-24">
-<svg class="w-full h-full transform -rotate-90">
-<circle class="text-gray-100 dark:text-gray-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
-<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-width="8"></circle>
-</svg>
-<div class="absolute inset-0 flex flex-col items-center justify-center">
-<span class="text-xl font-bold">50%</span>
-</div>
-</div>
-<div class="flex-1">
-<p class="text-[#89616b] dark:text-gray-400 text-sm font-medium">Spent vs. Remaining</p>
-<p class="text-xl font-bold text-[#181113] dark:text-white">$12,400 / $25k</p>
-<div class="mt-2 h-1.5 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 50%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Quick Actions -->
-<div class="px-4 pt-8">
-<h3 class="text-[#181113] dark:text-white text-lg font-bold mb-4">Quick Actions</h3>
-<div class="grid grid-cols-2 gap-4">
-<button class="flex items-center gap-3 p-4 bg-primary/10 dark:bg-primary/20 rounded-xl border border-primary/20 transition-all hover:scale-[1.02]">
-<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-xl">person_add</span>
-</div>
-<div class="text-left">
-<p class="text-sm font-bold">Add Guest</p>
-<p class="text-[10px] text-gray-500 uppercase font-semibold">Invite List</p>
-</div>
-</button>
-<button class="flex items-center gap-3 p-4 bg-primary/10 dark:bg-primary/20 rounded-xl border border-primary/20 transition-all hover:scale-[1.02]">
-<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-xl">task</span>
-</div>
-<div class="text-left">
-<p class="text-sm font-bold">New Task</p>
-<p class="text-[10px] text-gray-500 uppercase font-semibold">To-do list</p>
-</div>
+<h2 class="text-[#181113] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Guest List</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent text-[#181113] dark:text-white">
+<span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
 </div>
-<!-- Upcoming Tasks -->
-<div class="px-4 pt-8">
-<div class="flex items-center justify-between mb-4">
-<h3 class="text-[#181113] dark:text-white text-lg font-bold">Upcoming Tasks</h3>
-<button class="text-primary text-sm font-semibold">See All</button>
+<div class="px-4 pb-4">
+<div class="flex p-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-xl">
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white dark:bg-gray-700 text-primary shadow-sm">All Sides</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-lg text-[#89616b] dark:text-gray-400">Bride's</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-lg text-[#89616b] dark:text-gray-400">Groom's</button>
 </div>
-<div class="space-y-3">
-<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
-<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
-<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
 </div>
-<div class="flex-1">
-<p class="text-sm font-semibold">Finalize Catering Menu</p>
-<p class="text-xs text-gray-500">Due in 2 days</p>
+<div class="flex flex-nowrap gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
+<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Total Invited</p>
+<p class="text-primary tracking-light text-xl font-bold leading-tight">150</p>
 </div>
-<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Confirmed</p>
+<p class="text-green-600 tracking-light text-xl font-bold leading-tight">82</p>
 </div>
-<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
-<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
-<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
-</div>
-<div class="flex-1">
-<p class="text-sm font-semibold">Bridal Dress Fitting</p>
-<p class="text-xs text-gray-500">Due in 5 days</p>
-</div>
-<span class="material-symbols-outlined text-gray-300">chevron_right</span>
-</div>
-<div class="flex items-center gap-4 p-4 bg-white dark:bg-background-dark/40 rounded-xl border border-gray-100 dark:border-white/10">
-<div class="w-6 h-6 rounded border-2 border-primary/30 flex items-center justify-center cursor-pointer">
-<div class="w-3 h-3 bg-primary rounded-sm opacity-0"></div>
-</div>
-<div class="flex-1">
-<p class="text-sm font-semibold">Order Floral Decorations</p>
-<p class="text-xs text-gray-500">Due in 1 week</p>
-</div>
-<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+<div class="flex min-w-[110px] flex-1 flex-col gap-1 rounded-xl p-3 border border-[#e6dbde] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+<p class="text-[#89616b] dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Pending</p>
+<p class="text-gray-500 tracking-light text-xl font-bold leading-tight">68</p>
 </div>
 </div>
 </div>
-<!-- Bottom Navigation (Fixed) -->
-<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-gray-100 dark:border-white/10 flex items-center justify-around py-4 px-6 z-50">
-<button class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined font-variation-fill">home</span>
-<span class="text-[10px] font-bold">Home</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-gray-400">
-<span class="material-symbols-outlined">group</span>
-<span class="text-[10px] font-bold">Guests</span>
-</button>
-<div class="relative -top-8">
-<button class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white">
+<div class="bg-white dark:bg-background-dark">
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#89616b] flex border-none bg-[#f4f0f1] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#181113] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f4f0f1] dark:bg-gray-800 h-full placeholder:text-[#89616b] px-3 text-base font-normal" placeholder="Search guests..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-white shadow-sm">
+<p class="text-sm font-semibold">All Guests</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f4f0f1] dark:bg-gray-800 px-5 border border-gray-100 dark:border-gray-700">
+<p class="text-[#181113] dark:text-gray-300 text-sm font-medium">Confirmed</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f4f0f1] dark:bg-gray-800 px-5 border border-gray-100 dark:border-gray-700">
+<p class="text-[#181113] dark:text-gray-300 text-sm font-medium">Pending</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-2 pb-24">
+<div class="px-3 py-2 flex items-center justify-between">
+<p class="text-[#89616b] text-xs font-bold uppercase tracking-widest">Showing All Guests</p>
+<p class="text-[#89616b] text-[10px] font-medium">Sort: Recent</p>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB80YuFmvZ4NDOPK143RYYvLjBN4fVa48P2i8i4b4xRIfuSeFx_AqF-1CFUPQAJe3Xspm1xbjGrQ-7V4otHDJlTB9sLczOyR7MhIJImfAhYQkP5hPJg4Zc71HcH5TAJqqAxokOov-wHxcSvE2huiWGiC57Uma1uCykDh11lvU3XGARlXJ3iYmtHdnVmjrdz4a145hKOSUz36fw1RAKQGfC3SPDocmc-zXgt86vDwIzyPGKvPj5IQcNaeCiduO0gLsO8akTNgW0QXmGC");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Sarah &amp; Mike Johnson</p>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
+<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 2 • Vegan</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Confirmed</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCebxLtVmLY9BvE1mybJiDoML-K54ZEe9keFSmw_0oMzRSN0LJ8cJleg73ntQ4yxLs9ll9blA53VA6W8OGtYb-huFkMgYqLEypqwtLCcba09kTOrdOURKBioZcqNE-ku454gbQyiel-k8uGYtJWhfzaR4-GA6sVcPGpClaHrRbMJlLTDGUK8c6Fc5K58qBux6F9vnYtgSuruCjDeWMjrvraSfIZF5DYak_QoUV45bWIkfisTP7VMcrzBDSjp6aVHQ1PEofkcGCpwh3A");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">David Wilson</p>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-500 border border-blue-100 uppercase">Groom</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
+<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 1 • Pending Info</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider">Pending</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3 opacity-60">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-gray-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6e6-Gmc0gobVfk5kNdMNbrwv7nDdeuO1LiuP8Zm3Xnh6l-Nw_5tTAOSjSfcVWYd8R4Zw3KZzLVCovXTlCgDuOvEzE6--a7UI73BWDsaUiEl0x86jfR5sB_-NwWpk4bqINkEGrYowGKSCZeE3vjesryNecGrDKSopJ992frmKsiGKDVzfr6Uf3VDMcyDwbKE9G23FRSfjBid3Knk5k1zx6fyRu3G91aPCncx0SMpxWT3mvvX2utOrDZ-BoUiy-a1OTQSmEIamYVdyk");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Elena Rodriguez</p>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm text-[#89616b]">close</span>
+<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Cannot Attend</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-1 rounded-full bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-wider">Declined</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzie1m7xVQWmZKZmqd8W0P27Gs_AuS94j1QdMt7wG7JhlptwyDbo18iMkR3YIGEeMZgUVpEB8i7GyYJSJjTQhMjJ6nnY3mG1eVOKsdFhtlSMPcv2zLyO9av2ykiIQcTbimc5b10z5yysHHvhVndxjFWdwlKz2WcwXrqxPEJSUj3jZGVWuKk5rpnWba8_cpOc8Z0m7dFeXkDNWADTC0HufA5EstKCc7GBEBfVzmF-7hHRPA9htI1mgix0Rv2FbjWvLjewSo2XCUpUz1");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">The Thompson Family</p>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-500 border border-blue-100 uppercase">Groom</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
+<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 4 • Mixed</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Confirmed</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-2 my-1 rounded-xl px-4 min-h-[80px] py-3 justify-between shadow-sm border border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqBURV2o-AwlgTId5tRMwRZNXhGLMurX57Mg8lNy_44y-Qe90rZBMIs0qpkvq28CxiKq3Y9gZSp65g9umlaIvBEHvRCQCK6umGttJIcmRqmW4pNOI9sNboOlAWMHOe8BrmbVwdkqNbBRtxGlOR9umaAWK2wdXKbkW9N1TlLxeEPMWU5EtyRfQ_gBCwoTf1KG9nALYN7PIuhVcUl_HHzWUIb4C6nw2YiFqJEmeRgBDyg_DVBA5WPCIZQGnLwOO_Dm1dCZLY5yLen_Ci");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-[#181113] dark:text-white text-base font-bold leading-tight">Robert Chen</p>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-500 border border-pink-100 uppercase">Bride</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm text-[#89616b]">restaurant</span>
+<p class="text-[#89616b] dark:text-gray-400 text-xs font-normal">Party of 1 • Standard</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider">Pending</span>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-30">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg active:scale-95 transition-transform">
 <span class="material-symbols-outlined text-3xl">add</span>
 </button>
 </div>
-<button class="flex flex-col items-center gap-1 text-gray-400">
+<div class="sticky bottom-0 z-20 w-full bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 flex justify-around py-3">
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Guests</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-medium">Tasks</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
 <span class="material-symbols-outlined">payments</span>
-<span class="text-[10px] font-bold">Budget</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-gray-400">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-[10px] font-bold">Settings</span>
-</button>
+<span class="text-[10px] font-medium">Budget</span>
 </div>
 </div>
+</div>
+
 </body></html>
